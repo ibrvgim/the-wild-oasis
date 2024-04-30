@@ -1,15 +1,15 @@
-import { useState } from "react";
-import useLogin from "./useLogin";
+import { useState } from 'react';
+import useLogin from './useLogin';
 
-import Button from "../../ui/Button";
-import Form from "../../ui/Form";
-import Input from "../../ui/Input";
-import FormRowVertical from "../../ui/FormRowVertical";
-import SpinnerMini from "../../ui/SpinnerMini";
+import Button from '../../ui/Button';
+import Form from '../../ui/Form';
+import Input from '../../ui/Input';
+import FormRowVertical from '../../ui/FormRowVertical';
+import SpinnerMini from '../../ui/SpinnerMini';
 
 function LoginForm() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('example@gmail.com');
+  const [password, setPassword] = useState('example#1703');
 
   const { isLogining, login } = useLogin();
 
@@ -21,8 +21,8 @@ function LoginForm() {
       { email, password },
       {
         onSettled: () => {
-          setEmail("");
-          setPassword("");
+          setEmail('');
+          setPassword('');
         },
       }
     );
@@ -30,30 +30,30 @@ function LoginForm() {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <FormRowVertical label="Email address">
+      <FormRowVertical label='Email address'>
         <Input
-          type="email"
-          id="email"
+          type='email'
+          id='email'
           // This makes this form better for password managers
-          autoComplete="username"
+          autoComplete='username'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           disabled={isLogining}
         />
       </FormRowVertical>
-      <FormRowVertical label="Password">
+      <FormRowVertical label='Password'>
         <Input
-          type="password"
-          id="password"
-          autoComplete="current-password"
+          type='password'
+          id='password'
+          autoComplete='current-password'
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           disabled={isLogining}
         />
       </FormRowVertical>
       <FormRowVertical>
-        <Button size="large" disabled={isLogining}>
-          {isLogining ? <SpinnerMini /> : "Login"}
+        <Button size='large' disabled={isLogining}>
+          {isLogining ? <SpinnerMini /> : 'Login'}
         </Button>
       </FormRowVertical>
     </Form>
