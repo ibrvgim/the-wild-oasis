@@ -1,6 +1,6 @@
 # THE WILD OASIS
 
-The Wild Oasis is designed to empower employees to manage the progress of their business. This is similar to the admin panel.
+The Wild Oasis is designed to empower employees to manage the progress of their business. This is internal business managment website.
 
 > [!IMPORTANT]
 > The Website does not have responsive design.
